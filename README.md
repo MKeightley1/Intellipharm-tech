@@ -2,7 +2,11 @@
 
 This Application is a RESTFUL API dealing with simple customer engagement form submission.
 
-Requirements
+#Task
+We would like to see you use PHP to select data from a mysql database table (see included members.sql) and produce a JSON view of this data. Your javascript application will consume and display this data according to the "Javascript / UI Requirements" section below. 
+
+Extra points for using an PHP MVC framework to achieve this part. The URL should be able to take 3 GET or POST string arguments : "firstname", "surname" and "email". These arguments should be used to limit the results in the JSON output to only include records the search strings match in their respective MySQL database fields. 
+
 
 
 ## Installation
@@ -17,7 +21,7 @@ extension=openssl
 extension=pdo_mysql
 extension=pdo_sqlite
 ```
-3. Run Composer Update
+3. To install required vendor directory - please Run "Composer Update" command in terminal
 
 4. Create .env file from .env.example file and update Database configuration
 ```python
@@ -27,17 +31,32 @@ DB_DATABASE=###
 DB_USERNAME=###
 DB_PASSWORD=###
 ```
-In Terminal - 
-run the following commands to install necessary tables
+In Terminal - run the following command to install necessary tables
 php artisan migrate:refresh
+In Terminal - run local server:
 php -S localhost:8000 -t public
 
 Test API Endpoints:
-(GET)  /record - to create a new record in database with 3 parameters (firstname, surname, email)
+(GET/POST)  /create - to create a new record in database with 3 parameters (firstname, surname, email)
 Example
 ```python
-URL=http://localhost:8000/record?firstname=1&surname=2&email=3
+URL=http://localhost:8000/create?firstname=1&surname=2&email=3
 ```
+(GET/POST)  /read - to read in all records to date - filter by any of the 3 parameters (firstname, surname, email)
+Example
+```python
+URL=http://localhost:8000/read?firstname=1&surname=2&email=3
+```
+
+
+
+
+
+
+
+
+
+
 
 
 # Lumen PHP Framework
