@@ -19,7 +19,13 @@ extension=mbstring
 extension=mysqli
 extension=openssl
 extension=pdo_mysql
+extension=pdo_odbc
+extension=pdo_pgsql
 extension=pdo_sqlite
+
+
+
+
 ```
 3. To install required vendor directory - please Run "Composer Update" command in terminal
 
